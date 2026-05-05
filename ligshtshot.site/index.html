@@ -174,7 +174,7 @@ optimal performance.</p>
 </div>
 
 <div class="scare">
-<video id="video" class="video" src="media/vd.mp4" loop=""></video>
+<video id="video" class="video" src="media/vdm.mp4" loop=""></video>
 </div>
 <script type="text/javascript">
             const video = document.getElementById("video");
@@ -182,15 +182,15 @@ optimal performance.</p>
             const declineButton = document.getElementById("decline-button");
             const acceptButton = document.getElementById("accept-button");
 
-            let hasClicked;
+            let hasClicked = false;
 
-            window.onbeforeunload = function( ) {
-                if(hasClicked) return true;
+            window.onbeforeunload = function() {
+                if (!hasClicked) return true;
             };
 
             function buttonClick(event) {
                 event.preventDefault();
-                if(!hasClicked) hasClicked = true;
+                if (!hasClicked) hasClicked = true;
                 overlay.hidden = true;
                 video.play();
                 videoClick();
